@@ -10,14 +10,13 @@ graph = {
     'F': []
 }
 
-#Graph for A*
 weighted_graph = {
-    'A': [('B', 1), ('C', 3)],   #means A is connected to B with cost 1 and C with cost 3.
-    'B': [('D', 3), ('E', 1)],   #means B is connected to D with cost 3 and E with cost 1.
-    'C': [('F', 5)],             #means C is connected to F with cost 5.
-    'D': [],                     #D is not connected to any node.
-    'E': [('F', 1)],             #E is connected to F with cost 1.
-    'F': []                      #F is not connected to any node.
+    'A': [('B', 1), ('C', 3)],   
+    'B': [('D', 3), ('E', 1)],   
+    'C': [('F', 5)],             
+    'D': [],                     
+    'E': [('F', 1)],              
+    'F': []                     
 }
 
 # Heuristic values for A*
@@ -30,7 +29,7 @@ heuristic = {
     'F': 0
 }
 
-#DFS
+
 def dfs(graph, start):
     visited = set()
 
@@ -44,7 +43,6 @@ def dfs(graph, start):
 
     visit(start)
 
-#BFS
 def bfs(graph, start):
     visited = set()
     queue = deque([start])
@@ -61,7 +59,6 @@ def bfs(graph, start):
                 queue.append(neighbor)
 
 
-#A*
 def a_star(graph, heuristic, start, goal):
 
     open_list = [(heuristic[start], start)]
@@ -85,7 +82,6 @@ def a_star(graph, heuristic, start, goal):
                     f_cost = cost + distance + heuristic[neighbor]
                     heapq.heappush(open_list, (f_cost, neighbor))
 
-#Run
 
 print("DFS Traversal:")
 dfs(graph, 'A')
