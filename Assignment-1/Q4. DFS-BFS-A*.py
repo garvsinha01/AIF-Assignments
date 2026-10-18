@@ -1,6 +1,6 @@
 from collections import deque
 import heapq
-#Graph for BFS and DFS
+
 graph = {
     'A': ['B', 'C'],
     'B': ['D', 'E'],
@@ -19,7 +19,6 @@ weighted_graph = {
     'F': []                     
 }
 
-# Heuristic values for A*
 heuristic = {
     'A': 6,
     'B': 4,
